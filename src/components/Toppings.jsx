@@ -14,6 +14,19 @@ const containerVariants = {
   }
 }
 
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255,255,255",
+    textShadow: "0px 0px 8px rgb(255,255,255",
+    transition: {
+      repeatType: "reverse",
+      repeat: Infinity,
+      duration: 0.4
+    }
+  },
+};
+
 const Toppings = ({ addTopping, pizza }) => {
   let toppings = ['mushrooms', 'peppers', 'onions', 'olives', 'extra cheese', 'tomatoes'];
 
@@ -41,11 +54,8 @@ const Toppings = ({ addTopping, pizza }) => {
 
       <Link to="/order">
         <motion.button
-        whileHover={{
-          scale: 1.1,
-          textShadow: "0px 0px 8px rgb(255,255,255",
-          textShadow: "0px 0px 8px rgb(255,255,255",
-        }} 
+        variants={buttonVariants}
+        whileHover="hover"
         >
           Order
         </motion.button>
